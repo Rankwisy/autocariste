@@ -1,0 +1,62 @@
+# Homepage (root) is index.html - no redirect needed
+
+# Services: pretty URLs without .html
+/services/ /services/location-autocar-chauffeur.html 200
+/services/location-autocar-chauffeur/ /services/location-autocar-chauffeur.html 200
+/services/minibus-chauffeur/ /services/minibus-chauffeur.html 200
+/services/transfert-aeroport/ /services/transfert-aeroport.html 200
+/services/bus-mariage/ /services/bus-mariage.html 200
+/services/autocar-entreprise/ /services/autocar-entreprise.html 200
+/services/charter-bus/ /services/charter-bus.html 200
+
+# Tarifs / LEZ alternate URLs
+/prix-location-autocar/ /tarifs/ 302
+/lez-bruxelles-autocar/ /lez/ 302
+
+# Annuaire client pages (pretty URL -> .html)
+/annuaire/location-busbe/ /annuaire/location-busbe.html 200
+/annuaire/locationautocarbe/ /annuaire/locationautocarbe.html 200
+/annuaire/lvcbrussels/ /annuaire/lvcbrussels.html 200
+/annuaire/transportbelgiquecom/ /annuaire/transportbelgiquecom.html 200
+/annuaire/rentabusbe/ /annuaire/rentabusbe.html 200
+/annuaire/busminibuscom/ /annuaire/busminibuscom.html 200
+/annuaire/autocar-bruxellesbe/ /annuaire/autocar-bruxellesbe.html 200
+/annuaire/busrentalbrussels/ /annuaire/busrentalbrussels.html 200
+/annuaire/locationbusbe/ /annuaire/locationbusbe.html 200
+/annuaire/shuttle-servicebe/ /annuaire/shuttle-servicebe.html 200
+/annuaire/limostarbe/ /annuaire/limostarbe.html 200
+/annuaire/rentbusbrussels/ /annuaire/rentbusbrussels.html 200
+/annuaire/vtcbrussels/ /annuaire/vtcbrussels.html 200
+/annuaire/bus4rentbe/ /annuaire/bus4rentbe.html 200
+/annuaire/chauffeurbrussels/ /annuaire/chauffeurbrussels.html 200
+/annuaire/autocar-servicecom/ /annuaire/autocar-servicecom.html 200
+/annuaire/autocarbrussels/ /annuaire/autocarbrussels.html 200
+
+# Blog (pretty URL -> .html)
+/blog/location-autocar-chauffeur-bruxelles-guide-complet/ /blog/location-autocar-chauffeur-bruxelles-guide-complet.html 200
+/blog/transfert-aeroport-zaventem-autocar-groupe/ /blog/transfert-aeroport-zaventem-autocar-groupe.html 200
+/blog/location-bus-mariage-bruxelles/ /blog/location-bus-mariage-bruxelles.html 200
+
+# Destinations (pretty URL -> .html)
+/destinations/bruxelles-ville/ /destinations/bruxelles-ville.html 200
+/destinations/ixelles/ /destinations/ixelles.html 200
+/destinations/anderlecht/ /destinations/anderlecht.html 200
+/destinations/schaerbeek/ /destinations/schaerbeek.html 200
+/destinations/molenbeek/ /destinations/molenbeek.html 200
+/destinations/etterbeek/ /destinations/etterbeek.html 200
+/destinations/forest/ /destinations/forest.html 200
+/destinations/uccle/ /destinations/uccle.html 200
+/destinations/woluwe-saint-lambert/ /destinations/woluwe-saint-lambert.html 200
+/destinations/woluwe-saint-pierre/ /destinations/woluwe-saint-pierre.html 200
+/destinations/jette/ /destinations/jette.html 200
+/destinations/laeken/ /destinations/laeken.html 200
+/destinations/evere/ /destinations/evere.html 200
+/destinations/saint-josse/ /destinations/saint-josse.html 200
+/destinations/koekelberg/ /destinations/koekelberg.html 200
+/destinations/ganshoren/ /destinations/ganshoren.html 200
+/destinations/berchem/ /destinations/berchem.html 200
+/destinations/watermael/ /destinations/watermael.html 200
+/destinations/auderghem/ /destinations/auderghem.html 200
+
+# SPA-style 404: serve index.html for unknown paths (optional - comment out if you prefer Netlify 404 page)
+# /* /index.html 200
