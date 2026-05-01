@@ -7,128 +7,429 @@
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://www.autocariste.be/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800;900&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Autocariste.be","url":"https://www.autocariste.be","description":"Annuaire location autocar avec chauffeur Bruxelles et Belgique"}</script>
 <style>
-:root{--navy:#0c1a28;--navy-mid:#173147;--gold:#e09c1a;--gold-light:#f5be50;--white:#fff;--off:#f8f6f1;--g100:#eeecea;--text:#374151;--muted:#6b7280;--dark:#1a2533;--teal:#0d7a6c;--fh:'Sora',sans-serif;--fb:'DM Sans',sans-serif;--r:10px;--rl:16px;--sh:0 2px 16px rgba(12,26,40,.09);--shl:0 6px 36px rgba(12,26,40,.16)}
+:root{--navy:#0c1a28;--navy-mid:#173147;--gold:#e09c1a;--gold-light:#f5be50;--white:#fff;--off:#f8f6f1;--g100:#eeecea;--text:#374151;--muted:#6b7280;--dark:#1a2533;--teal:#0d7a6c;--fh:'Sora',sans-serif;--fb:'DM Sans',sans-serif}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}body{font-family:var(--fb);color:var(--text);background:var(--white);line-height:1.7;font-size:16px}
-a{color:inherit;text-decoration:none}img{max-width:100%;height:auto;display:block}
-.topbar{background:var(--navy-mid);padding:7px 24px;font-size:.78rem;color:rgba(255,255,255,.6)}
-.topbar-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
-.topbar a{color:rgba(255,255,255,.7)}.topbar a:hover{color:var(--gold-light)}
-.site-header{background:var(--navy);position:sticky;top:0;z-index:200;border-bottom:2px solid var(--gold)}
-.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{display:flex;align-items:center;gap:10px}
-.logo-mark{width:36px;height:36px;background:var(--gold);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:19px}
-.logo-text{font-family:var(--fh);font-size:1.2rem;font-weight:700;color:var(--white)}
-.logo-text span{color:var(--gold)}
-nav ul{list-style:none;display:flex;gap:2px}
-nav ul li a{font-size:.87rem;font-weight:500;color:rgba(255,255,255,.75);padding:8px 12px;border-radius:7px;transition:all .18s}
-nav ul li a:hover,.nav-active{background:rgba(255,255,255,.09);color:var(--white)!important}
-.nav-cta{background:var(--gold)!important;color:var(--navy)!important;font-weight:600!important;border-radius:8px!important}
-.nav-cta:hover{background:var(--gold-light)!important}
-.hero{background:var(--navy);color:var(--white);padding:64px 24px 72px;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 55% 60% at 80% 40%,rgba(224,156,26,.11) 0%,transparent 65%),radial-gradient(ellipse 35% 50% at 5% 90%,rgba(13,122,108,.14) 0%,transparent 55%);pointer-events:none}
-.hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
-.eyebrow{font-size:.76rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:9px;display:block}
-.hero h1{font-family:var(--fh);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;line-height:1.18;letter-spacing:-.5px;margin-bottom:18px}
-.hero h1 em{font-style:normal;color:var(--gold)}
-.hero-desc{font-size:1rem;color:rgba(255,255,255,.7);line-height:1.78;max-width:680px;margin-bottom:28px}
-.btn{display:inline-flex;align-items:center;gap:7px;font-family:var(--fb);font-weight:600;font-size:.92rem;padding:12px 24px;border-radius:var(--r);border:none;cursor:pointer;transition:all .2s;text-decoration:none}
+body{font-family:var(--fb);color:var(--text);background:var(--white);line-height:1.65;font-size:18px;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1320px;margin:0 auto;padding:0 40px}
+
+/* top bar */
+.topstrip{background:var(--navy);color:rgba(255,255,255,.65);font-size:.88rem;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.topstrip-in{display:flex;justify-content:space-between;align-items:center;gap:24px}
+.topstrip a{color:rgba(255,255,255,.7)}.topstrip a:hover{color:var(--gold-light)}
+.tags{display:flex;gap:18px}.tags span{display:flex;align-items:center;gap:6px}
+
+/* header */
+.head{background:var(--white);border-bottom:1px solid var(--g100);position:sticky;top:0;z-index:50}
+.head-in{display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center;height:80px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .mark{width:42px;height:42px;background:var(--navy);border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:21px}
+.brand .name{font-family:var(--fh);font-size:1.32rem;font-weight:800;letter-spacing:-0.02em;color:var(--navy)}
+.brand .name span{color:var(--gold)}
+.head nav{display:flex;justify-content:center;gap:4px}
+.head nav a{font-family:var(--fh);font-size:.98rem;font-weight:500;color:var(--navy);padding:10px 14px;border-radius:8px;transition:all .15s}
+.head nav a:hover{background:var(--off)}
+.head nav a.active{background:var(--off);font-weight:600}
+.head .actions{display:flex;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:7px;font-family:var(--fh);font-weight:600;font-size:.88rem;padding:11px 20px;border-radius:9px;border:none;cursor:pointer;transition:all .18s}
 .btn-gold{background:var(--gold);color:var(--navy)}.btn-gold:hover{background:var(--gold-light);transform:translateY(-1px)}
-.section{padding:72px 24px}.section-inner{max-width:1200px;margin:0 auto}
-.section-alt{background:var(--off)}
-.section-title{font-family:var(--fh);font-size:clamp(1.5rem,2.8vw,2.1rem);font-weight:700;color:var(--dark);line-height:1.2;margin-bottom:12px}
-.section-sub{font-size:1rem;color:var(--muted);max-width:660px;line-height:1.78;margin-bottom:40px}
-.grid-3{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
-.card{background:var(--white);border:1px solid var(--g100);border-radius:var(--rl);padding:28px;transition:all .22s;position:relative;overflow:hidden}
-.card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform .22s;transform-origin:left}
-.card:hover{box-shadow:var(--shl);transform:translateY(-3px);border-color:rgba(224,156,26,.25)}.card:hover::after{transform:scaleX(1)}
-.card-icon{width:48px;height:48px;background:var(--off);border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:16px}
-.card h3{font-family:var(--fh);font-size:1rem;font-weight:600;color:var(--dark);margin-bottom:8px}
-.card p{font-size:.88rem;color:var(--muted);line-height:1.65;margin-bottom:14px}
-.card-link{font-size:.83rem;font-weight:600;color:var(--gold);display:inline-flex;align-items:center;gap:5px}
-.cta-banner{background:var(--navy);padding:64px 24px;text-align:center;position:relative;overflow:hidden}
-.cta-banner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 65% 80% at 50% 50%,rgba(224,156,26,.09) 0%,transparent 65%)}
-.cta-inner{position:relative;z-index:1}
-.cta-banner h2{font-family:var(--fh);font-size:clamp(1.5rem,2.8vw,2.1rem);font-weight:700;color:var(--white);margin-bottom:12px}
-.cta-banner p{color:rgba(255,255,255,.62);font-size:1rem;max-width:500px;margin:0 auto 26px}
-.site-footer{background:#071019;color:rgba(255,255,255,.5);padding:48px 24px 24px}
-.footer-inner{max-width:1200px;margin:0 auto}
-.footer-top{display:grid;grid-template-columns:240px 1fr 1fr 1fr;gap:32px;margin-bottom:38px}
-.footer-logo{font-family:var(--fh);font-size:1.15rem;font-weight:700;color:var(--white)}
-.footer-logo span{color:var(--gold)}
-.footer-brand p{font-size:.84rem;line-height:1.7;margin-top:11px}
-.footer-col h4{font-family:var(--fh);font-size:.8rem;font-weight:600;color:var(--white);text-transform:uppercase;letter-spacing:.06em;margin-bottom:13px}
-.footer-col ul{list-style:none}.footer-col ul li{margin-bottom:8px}
-.footer-col ul li a{font-size:.83rem;color:rgba(255,255,255,.45);transition:color .18s}.footer-col ul li a:hover{color:var(--gold)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-.footer-bottom p{font-size:.79rem}
-.footer-legal{display:flex;gap:16px}.footer-legal a{font-size:.79rem;color:rgba(255,255,255,.36)}
-@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr}}
-@media(max-width:620px){.section{padding:48px 18px}.hero{padding:44px 18px 52px}.footer-top{grid-template-columns:1fr}nav ul{display:none}}
+.btn-outline{background:transparent;border:1px solid var(--g100);color:var(--navy)}.btn-outline:hover{border-color:var(--navy)}
+
+/* hero — full bleed magazine */
+.hero{background:var(--navy);color:var(--white);padding:72px 0 0;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle 600px at 90% 10%,rgba(224,156,26,.16),transparent 70%),radial-gradient(circle 500px at 10% 100%,rgba(13,122,108,.18),transparent 70%);pointer-events:none}
+.hero-in{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr 1fr;gap:64px;align-items:center}
+.hero-text{padding-bottom:64px}
+.hero-meta{display:flex;align-items:center;gap:18px;font-family:var(--fh);font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;flex-wrap:wrap}
+.hero-meta .dot{width:5px;height:5px;background:var(--gold);border-radius:50%}
+.hero-meta .pl{color:rgba(255,255,255,.4);letter-spacing:.14em}
+.hero h1{font-family:var(--fh);font-size:clamp(2.6rem,5.6vw,5.4rem);font-weight:900;line-height:.96;letter-spacing:-0.035em;text-wrap:balance;margin-bottom:28px}
+.hero h1 em{font-style:normal;color:var(--gold);display:block}
+.hero-bottom{display:flex;flex-direction:column;gap:24px;padding-top:32px;border-top:1px solid rgba(255,255,255,.1)}
+
+/* hero illustration */
+.hero-art{position:relative;align-self:end;padding-bottom:0}
+.hero-art-inner{position:relative;width:100%;aspect-ratio:5/4;border-radius:18px;overflow:hidden;background:linear-gradient(180deg,#1a3550 0%,#0c1a28 60%,#071019 100%);box-shadow:0 30px 80px -20px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.06)}
+.hero-art svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero-art .badge{position:absolute;left:20px;bottom:20px;background:var(--gold);color:var(--navy);font-family:var(--fh);font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;padding:9px 14px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;box-shadow:0 8px 24px rgba(224,156,26,.3)}
+.hero-art .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--navy)}
+@media(max-width:980px){.hero-in{grid-template-columns:1fr;gap:32px}.hero-art{padding-bottom:48px}}
+.hero-desc{font-size:1.22rem;color:rgba(255,255,255,.82);line-height:1.7;max-width:560px}
+.hero-actions{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.hero-actions .btn{padding:14px 28px;font-size:.95rem}
+.hero-actions .meta-line{font-size:.92rem;color:rgba(255,255,255,.55);font-family:var(--fh)}
+
+/* stats strip just below hero */
+.stat-strip{background:var(--gold);color:var(--navy);padding:0}
+.stat-strip-in{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.stat-strip .s{padding:28px 32px;border-right:1px solid rgba(12,26,40,.12)}
+.stat-strip .s:last-child{border-right:none}
+.stat-strip .s b{display:block;font-family:var(--fh);font-size:2.4rem;font-weight:800;letter-spacing:-0.02em;line-height:1}
+.stat-strip .s p{font-size:.98rem;font-weight:500;margin-top:6px;opacity:.82}
+
+/* sections */
+.section{padding:88px 0}
+.section.alt{background:var(--off)}
+.section-head{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-bottom:48px;align-items:end}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--fh);font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
+.section-head h2{font-family:var(--fh);font-size:clamp(2rem,3.6vw,3.2rem);font-weight:800;color:var(--navy);letter-spacing:-0.025em;line-height:1.05;text-wrap:balance}
+.section-head .desc{font-size:1.12rem;color:var(--muted);line-height:1.7;max-width:520px}
+
+/* magazine grid for service cards */
+.mag{display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:auto auto;gap:18px}
+.mag a{background:var(--white);border:1px solid var(--g100);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:14px;transition:all .22s;position:relative;overflow:hidden;color:inherit}
+.section.alt .mag a{background:var(--white)}
+.mag a:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 20px 40px -20px rgba(12,26,40,.18)}
+.mag a .num{font-family:var(--fh);font-size:.7rem;font-weight:700;letter-spacing:.18em;color:var(--gold);text-transform:uppercase}
+.mag a .ico{font-size:32px;line-height:1}
+.mag a h3{font-family:var(--fh);font-size:1.25rem;font-weight:700;color:var(--navy);line-height:1.2;letter-spacing:-0.01em}
+.mag a p{font-size:1.02rem;color:var(--muted);line-height:1.65;flex:1}
+.mag a .arrow{font-family:var(--fh);font-size:.94rem;font-weight:600;color:var(--navy);display:inline-flex;align-items:center;gap:6px;border-bottom:1px solid var(--g100);padding-bottom:10px;width:fit-content;transition:all .2s}
+.mag a:hover .arrow{color:var(--gold);border-color:var(--gold)}
+
+/* magazine layout: spans */
+.mag .x-hero{grid-column:span 4;grid-row:span 2;background:var(--navy)!important;color:var(--white)!important;padding:48px;justify-content:space-between}
+.mag .x-hero h3{color:var(--white);font-size:2.2rem;line-height:1.05;letter-spacing:-0.02em;font-weight:800}
+.mag .x-hero p{color:rgba(255,255,255,.75);font-size:1.12rem;max-width:420px;line-height:1.65}
+.mag .x-hero .arrow{color:var(--gold);border-color:rgba(255,255,255,.15)}
+.mag .x-hero .num{color:var(--gold)}
+.mag .x-hero .big-icon{font-size:64px;align-self:flex-end;opacity:.9}
+.mag .x-hero:hover{transform:translateY(-3px);border-color:var(--gold)}
+.mag .span-2{grid-column:span 2}
+.mag .span-3{grid-column:span 3}
+
+/* horizontal links list */
+.linklist{background:var(--white);border:1px solid var(--g100);border-radius:18px;padding:8px;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.linklist a{padding:24px;display:flex;flex-direction:column;gap:8px;border-right:1px solid var(--g100);transition:all .15s;border-radius:12px}
+.linklist a:last-child{border-right:none}
+.linklist a:hover{background:var(--off)}
+.linklist .ic{font-size:24px;margin-bottom:6px}
+.linklist h4{font-family:var(--fh);font-size:1.1rem;font-weight:700;color:var(--navy);letter-spacing:-0.01em}
+.linklist p{font-size:.98rem;color:var(--muted);line-height:1.55}
+
+/* CTA */
+.cta{background:var(--navy);color:var(--white);padding:0;position:relative;overflow:hidden}
+.cta-in{display:grid;grid-template-columns:1.4fr 1fr;min-height:340px}
+.cta-text{padding:72px 56px;display:flex;flex-direction:column;justify-content:center;gap:20px;position:relative;z-index:1}
+.cta-text h2{font-family:var(--fh);font-size:clamp(2rem,3.8vw,3rem);font-weight:800;letter-spacing:-0.025em;line-height:1.05;text-wrap:balance}
+.cta-text h2 em{font-style:normal;color:var(--gold)}
+.cta-text p{color:rgba(255,255,255,.75);font-size:1.15rem;max-width:500px;line-height:1.7}
+.cta-text .btn{align-self:flex-start;padding:14px 28px;font-size:.95rem}
+.cta-side{background:var(--gold);color:var(--navy);padding:48px 40px;display:flex;flex-direction:column;justify-content:center;gap:12px;position:relative}
+.cta-side::before{content:'';position:absolute;left:-30px;top:50%;width:60px;height:60px;background:var(--gold);transform:translateY(-50%) rotate(45deg)}
+.cta-side .num{font-family:var(--fh);font-size:6rem;font-weight:900;line-height:.9;letter-spacing:-0.04em}
+.cta-side .lbl{font-family:var(--fh);font-size:1rem;font-weight:600}
+.cta-side small{font-size:.84rem;opacity:.75}
+
+/* footer */
+.foot{background:#071019;color:rgba(255,255,255,.5);padding:64px 0 28px}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;margin-bottom:40px}
+.foot h4{font-family:var(--fh);font-size:.74rem;font-weight:600;color:var(--white);text-transform:uppercase;letter-spacing:.16em;margin-bottom:16px}
+.foot ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.foot ul a{font-size:.96rem;color:rgba(255,255,255,.5)}
+.foot ul a:hover{color:var(--gold)}
+.foot-brand .footer-logo{font-family:var(--fh);font-size:1.32rem;font-weight:800;color:var(--white);margin-bottom:12px;letter-spacing:-0.02em}
+.foot-brand .footer-logo span{color:var(--gold)}
+.foot-brand p{font-size:.98rem;line-height:1.65;max-width:360px}
+.foot-bot{border-top:1px solid rgba(255,255,255,.06);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.8rem}
+.foot-bot nav a{margin-left:18px;color:rgba(255,255,255,.4)}
 </style>
-</head><body>
-<div class="topbar"><div class="topbar-inner"><span>🇧🇪 Annuaire autocaristes Bruxelles &amp; Belgique</span><div style="display:flex;gap:18px"><a href="/ajouter-mon-entreprise/">Référencer mon entreprise</a></div></div></div>
-<header class="site-header"><div class="nav-inner">
-<a href="/" class="logo"><div class="logo-mark">🚌</div><span class="logo-text">Autocariste<span>.be</span></span></a>
-<nav><ul>
-<li><a href="annuaire/">Annuaire</a></li>
-<li><a href="services/location-autocar-chauffeur.html">Services</a></li>
-<li><a href="tarifs/">Tarifs</a></li>
-<li><a href="destinations/">Destinations</a></li>
-<li><a href="blog/">Blog</a></li>
-<li><a href="lez/">LEZ</a></li>
-<li><a href="/devis/" class="nav-cta">Devis gratuit</a></li>
-</ul></nav>
+</head>
+<body>
+
+<div class="topstrip"><div class="wrap topstrip-in">
+  <div class="tags"><span>🇧🇪 Annuaire indépendant Bruxelles &amp; Belgique</span></div>
+  <a href="/ajouter-mon-entreprise/">Référencer mon entreprise →</a>
+</div></div>
+
+<header class="head"><div class="wrap head-in">
+  <a href="/" class="brand"><div class="mark">🚌</div><div class="name">Autocariste<span>.be</span></div></a>
+  <nav>
+    <a href="annuaire/">Annuaire</a>
+    <a href="services/location-autocar-chauffeur.html">Services</a>
+    <a href="tarifs/">Tarifs</a>
+    <a href="destinations/">Destinations</a>
+    <a href="blog/">Blog</a>
+    <a href="lez/">LEZ</a>
+  </nav>
+  <div class="actions">
+    <a href="/devis/" class="btn btn-gold">Devis gratuit →</a>
+  </div>
 </div></header>
-<section class="hero"><div class="hero-bg"></div><div class="hero-inner">
-  <span class="eyebrow">Annuaire indépendant</span>
-  <h1>Location <em>autocar avec chauffeur</em> — Bruxelles &amp; Belgique</h1>
-  <p class="hero-desc">Trouvez les prestataires de location d'autocar, minibus et transferts à Bruxelles. 17 entreprises référencées, 19 communes, devis gratuit. Flotte LEZ conforme.</p>
-  <a href="annuaire/" class="btn btn-gold">Voir l'annuaire →</a>
-</div></section>
-<section class="section"><div class="section-inner">
-  <span class="eyebrow">Navigation</span>
-  <h2 class="section-title">Services et ressources</h2>
-  <p class="section-sub">Accédez à l'annuaire, aux pages par commune et aux guides pratiques.</p>
-  <div class="grid-3">
-    <a href="annuaire/" class="card"><div class="card-icon">📋</div><h3>Annuaire</h3><p>Liste des loueurs d'autocar avec chauffeur à Bruxelles et en Belgique.</p><span class="card-link">Voir l'annuaire →</span></a>
-    <a href="services/location-autocar-chauffeur.html" class="card"><div class="card-icon">🚌</div><h3>Location autocar chauffeur</h3><p>Autocar avec chauffeur pour groupes, entreprises et événements.</p><span class="card-link">En savoir plus →</span></a>
-    <a href="destinations/" class="card"><div class="card-icon">📍</div><h3>Par commune</h3><p>19 communes de la Région de Bruxelles-Capitale.</p><span class="card-link">Choisir une commune →</span></a>
-    <a href="services/transfert-aeroport.html" class="card"><div class="card-icon">✈️</div><h3>Transfert aéroport</h3><p>Transfert aéroport Zaventem en autocar ou minibus.</p><span class="card-link">Transfert Zaventem →</span></a>
-    <a href="tarifs/" class="card"><div class="card-icon">💰</div><h3>Tarifs</h3><p>Prix et devis location autocar Bruxelles.</p><span class="card-link">Voir les tarifs →</span></a>
-    <a href="lez/" class="card"><div class="card-icon">🌿</div><h3>LEZ Bruxelles</h3><p>Zone basse émission et autocars conformes.</p><span class="card-link">LEZ autocars →</span></a>
+
+<section class="hero"><div class="wrap hero-in">
+  <div class="hero-text">
+    <div class="hero-meta"><span class="dot"></span><span>Annuaire indépendant</span><span class="pl">Édition 2025 · Bruxelles &amp; Belgique</span></div>
+    <h1>Location autocar <em>avec chauffeur.</em></h1>
+    <div class="hero-bottom">
+      <p class="hero-desc">Trouvez les prestataires de location d'autocar, minibus et transferts à Bruxelles. 17 entreprises référencées, 19 communes, devis gratuit. Flotte LEZ conforme.</p>
+      <div class="hero-actions" style="flex-direction:row;gap:14px;align-items:center;flex-wrap:wrap">
+        <a href="annuaire/" class="btn btn-gold">Voir l'annuaire →</a>
+        <span class="meta-line">17 prestataires &nbsp;·&nbsp; 19 communes &nbsp;·&nbsp; LEZ conforme</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-art">
+    <div class="hero-art-inner">
+      <svg viewBox="0 0 600 480" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs>
+          <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#1c3a5c"/>
+            <stop offset="0.6" stop-color="#0c1a28"/>
+            <stop offset="1" stop-color="#071019"/>
+          </linearGradient>
+          <linearGradient id="sun" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f5be50"/>
+            <stop offset="1" stop-color="#e09c1a"/>
+          </linearGradient>
+          <linearGradient id="bus" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#f5be50"/>
+            <stop offset="1" stop-color="#c98314"/>
+          </linearGradient>
+          <linearGradient id="win" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#a8c8e8" stop-opacity="0.95"/>
+            <stop offset="1" stop-color="#5b7da0" stop-opacity="0.95"/>
+          </linearGradient>
+          <linearGradient id="road" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#1a2533"/>
+            <stop offset="1" stop-color="#071019"/>
+          </linearGradient>
+        </defs>
+
+        <!-- sky -->
+        <rect width="600" height="480" fill="url(#sky)"/>
+
+        <!-- sun -->
+        <circle cx="460" cy="150" r="58" fill="url(#sun)" opacity="0.9"/>
+        <circle cx="460" cy="150" r="90" fill="#e09c1a" opacity="0.12"/>
+        <circle cx="460" cy="150" r="130" fill="#e09c1a" opacity="0.06"/>
+
+        <!-- stars -->
+        <g fill="#fff" opacity="0.6">
+          <circle cx="60" cy="60" r="1"/>
+          <circle cx="120" cy="40" r="0.8"/>
+          <circle cx="200" cy="80" r="1.1"/>
+          <circle cx="280" cy="50" r="0.9"/>
+          <circle cx="540" cy="60" r="1"/>
+          <circle cx="360" cy="30" r="0.7"/>
+        </g>
+
+        <!-- city skyline (Brussels-ish) -->
+        <g fill="#0a1622">
+          <rect x="0" y="230" width="60" height="130"/>
+          <rect x="55" y="200" width="50" height="160"/>
+          <rect x="100" y="250" width="70" height="110"/>
+          <rect x="165" y="180" width="40" height="180"/>
+          <polygon points="185,170 195,150 205,170" />
+          <rect x="200" y="220" width="60" height="140"/>
+          <rect x="255" y="260" width="50" height="100"/>
+          <rect x="300" y="210" width="45" height="150"/>
+          <!-- atomium-ish silhouette -->
+          <circle cx="380" cy="230" r="10"/>
+          <circle cx="395" cy="215" r="9"/>
+          <circle cx="410" cy="230" r="10"/>
+          <circle cx="395" cy="245" r="9"/>
+          <line x1="380" y1="230" x2="410" y2="230" stroke="#0a1622" stroke-width="2"/>
+          <line x1="395" y1="215" x2="395" y2="245" stroke="#0a1622" stroke-width="2"/>
+          <rect x="393" y="245" width="4" height="115"/>
+          <rect x="425" y="240" width="50" height="120"/>
+          <rect x="470" y="260" width="45" height="100"/>
+          <rect x="510" y="220" width="55" height="140"/>
+          <rect x="560" y="250" width="40" height="110"/>
+        </g>
+        <!-- skyline windows -->
+        <g fill="#e09c1a" opacity="0.7">
+          <rect x="10" y="250" width="3" height="4"/><rect x="20" y="260" width="3" height="4"/><rect x="30" y="250" width="3" height="4"/>
+          <rect x="65" y="220" width="3" height="4"/><rect x="75" y="230" width="3" height="4"/><rect x="85" y="220" width="3" height="4"/><rect x="95" y="240" width="3" height="4"/>
+          <rect x="110" y="270" width="3" height="4"/><rect x="120" y="280" width="3" height="4"/><rect x="140" y="270" width="3" height="4"/>
+          <rect x="170" y="200" width="3" height="4"/><rect x="180" y="220" width="3" height="4"/><rect x="170" y="240" width="3" height="4"/>
+          <rect x="210" y="240" width="3" height="4"/><rect x="230" y="260" width="3" height="4"/><rect x="240" y="240" width="3" height="4"/>
+          <rect x="310" y="230" width="3" height="4"/><rect x="325" y="250" width="3" height="4"/>
+          <rect x="435" y="260" width="3" height="4"/><rect x="450" y="280" width="3" height="4"/>
+          <rect x="520" y="240" width="3" height="4"/><rect x="540" y="260" width="3" height="4"/><rect x="550" y="280" width="3" height="4"/>
+          <rect x="570" y="270" width="3" height="4"/>
+        </g>
+
+        <!-- road -->
+        <rect x="0" y="360" width="600" height="120" fill="url(#road)"/>
+        <g stroke="#e09c1a" stroke-width="3" stroke-dasharray="24 18" opacity="0.55">
+          <line x1="0" y1="425" x2="600" y2="425"/>
+        </g>
+
+        <!-- coach bus -->
+        <g transform="translate(110,290)">
+          <!-- shadow -->
+          <ellipse cx="190" cy="118" rx="190" ry="7" fill="#000" opacity="0.45"/>
+          <!-- body -->
+          <rect x="10" y="20" width="360" height="82" rx="14" fill="url(#bus)"/>
+          <!-- roof shadow line -->
+          <rect x="10" y="20" width="360" height="6" rx="3" fill="#fff" opacity="0.18"/>
+          <!-- front cabin slope -->
+          <path d="M10 35 Q10 20 26 20 L40 20 L40 102 L10 102 Z" fill="#c98314" opacity="0.4"/>
+          <!-- windshield -->
+          <path d="M14 36 Q14 28 24 28 L42 28 L42 60 L14 60 Z" fill="url(#win)"/>
+          <!-- side windows -->
+          <g fill="url(#win)">
+            <rect x="54" y="32" width="38" height="30" rx="3"/>
+            <rect x="96" y="32" width="38" height="30" rx="3"/>
+            <rect x="138" y="32" width="38" height="30" rx="3"/>
+            <rect x="180" y="32" width="38" height="30" rx="3"/>
+            <rect x="222" y="32" width="38" height="30" rx="3"/>
+            <rect x="264" y="32" width="38" height="30" rx="3"/>
+            <rect x="306" y="32" width="38" height="30" rx="3"/>
+          </g>
+          <!-- door -->
+          <rect x="44" y="66" width="14" height="34" rx="2" fill="#0c1a28" opacity="0.55"/>
+          <!-- belt line stripe -->
+          <rect x="10" y="68" width="360" height="3" fill="#0c1a28" opacity="0.5"/>
+          <!-- headlight -->
+          <circle cx="22" cy="82" r="4" fill="#fff5d4"/>
+          <!-- license plate -->
+          <rect x="333" y="86" width="28" height="10" rx="2" fill="#0c1a28" opacity="0.6"/>
+          <!-- wheels -->
+          <circle cx="68" cy="108" r="16" fill="#0c1a28"/>
+          <circle cx="68" cy="108" r="7" fill="#3b3f44"/>
+          <circle cx="310" cy="108" r="16" fill="#0c1a28"/>
+          <circle cx="310" cy="108" r="7" fill="#3b3f44"/>
+        </g>
+      </svg>
+      <span class="badge"><span class="dot"></span>Flotte LEZ conforme</span>
+    </div>
   </div>
 </div></section>
-<section class="cta-banner"><div class="cta-inner">
-  <h2>Besoin d'un devis gratuit ?</h2>
-  <p>Comparez les prestataires et demandez un devis sans engagement.</p>
-  <a href="annuaire/" class="btn btn-gold" style="font-size:1rem;padding:14px 32px;">Voir l'annuaire →</a>
+
+<section class="stat-strip"><div class="wrap"><div class="stat-strip-in">
+  <div class="s"><b>17</b><p>Autocaristes référencés</p></div>
+  <div class="s"><b>19</b><p>Communes Bruxelles-Capitale</p></div>
+  <div class="s"><b>100%</b><p>Flotte LEZ conforme</p></div>
+  <div class="s"><b>Free</b><p>Devis sans engagement</p></div>
+</div></div></section>
+
+<section class="section"><div class="wrap">
+  <div class="section-head">
+    <div>
+      <span class="eyebrow">Navigation</span>
+      <h2>Services et ressources.</h2>
+    </div>
+    <p class="desc">Accédez à l'annuaire, aux pages par commune et aux guides pratiques. Tout le marché du transport en autocar avec chauffeur à Bruxelles.</p>
+  </div>
+
+  <div class="mag">
+    <a href="annuaire/" class="x-hero">
+      <div>
+        <span class="num">01 — Annuaire</span>
+        <h3 style="margin-top:14px">Liste des loueurs d'autocar avec chauffeur à Bruxelles et en Belgique.</h3>
+        <p style="margin-top:14px">17 entreprises référencées, fiches détaillées par prestataire.</p>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:end;margin-top:18px">
+        <span class="arrow">Voir l'annuaire →</span>
+        <span class="big-icon">📋</span>
+      </div>
+    </a>
+    <a href="services/location-autocar-chauffeur.html" class="span-2">
+      <span class="num">02 — Service</span>
+      <span class="ico">🚌</span>
+      <h3>Location autocar chauffeur</h3>
+      <p>Autocar avec chauffeur pour groupes, entreprises et événements.</p>
+      <span class="arrow">En savoir plus →</span>
+    </a>
+    <a href="destinations/" class="span-2">
+      <span class="num">03 — Couverture</span>
+      <span class="ico">📍</span>
+      <h3>Par commune</h3>
+      <p>19 communes de la Région de Bruxelles-Capitale.</p>
+      <span class="arrow">Choisir une commune →</span>
+    </a>
+  </div>
 </div></section>
-<footer class="site-footer"><div class="footer-inner">
-<div class="footer-top">
-<div class="footer-brand"><div class="footer-logo">Autocariste<span>.be</span></div><p>Annuaire indépendant des loueurs d'autocar avec chauffeur à Bruxelles et en Belgique.</p></div>
-<div class="footer-col"><h4>Annuaire</h4><ul>
-<li><a href="annuaire/">Tous les autocaristes</a></li>
-<li><a href="annuaire/">Location autocar Bruxelles</a></li>
-<li><a href="/ajouter-mon-entreprise/">Référencer mon entreprise</a></li>
-</ul></div>
-<div class="footer-col"><h4>Services</h4><ul>
-<li><a href="services/location-autocar-chauffeur.html">Location autocar avec chauffeur</a></li>
-<li><a href="services/minibus-chauffeur.html">Minibus avec chauffeur</a></li>
-<li><a href="services/transfert-aeroport.html">Transfert aéroport Zaventem</a></li>
-<li><a href="services/bus-mariage.html">Bus mariage Bruxelles</a></li>
-</ul></div>
-<div class="footer-col"><h4>Ressources</h4><ul>
-<li><a href="blog/">Blog &amp; guides</a></li>
-<li><a href="tarifs/">Prix location autocar</a></li>
-<li><a href="lez/">LEZ Bruxelles autocars</a></li>
-<li><a href="sitemap.xml">Sitemap</a></li>
-</ul></div>
-</div>
-<div class="footer-bottom">
-<p>© 2025 Autocariste.be — Annuaire location autocar avec chauffeur Bruxelles &amp; Belgique</p>
-<nav class="footer-legal"><a href="/mentions-legales/">Mentions légales</a><a href="/politique-confidentialite/">Confidentialité</a><a href="sitemap.xml">Sitemap</a></nav>
-</div></div></footer></body></html>
+
+<section class="section alt"><div class="wrap">
+  <div class="section-head">
+    <div>
+      <span class="eyebrow">Plus</span>
+      <h2>Transferts, tarifs &amp; conformité.</h2>
+    </div>
+    <p class="desc">Tout ce qu'il faut savoir avant de réserver — guides clairs et prestataires conformes.</p>
+  </div>
+  <div class="linklist">
+    <a href="services/transfert-aeroport.html">
+      <span class="ic">✈️</span>
+      <h4>Transfert aéroport</h4>
+      <p>Transfert Zaventem en autocar ou minibus.</p>
+    </a>
+    <a href="tarifs/">
+      <span class="ic">💰</span>
+      <h4>Tarifs</h4>
+      <p>Prix et devis location autocar Bruxelles.</p>
+    </a>
+    <a href="lez/">
+      <span class="ic">🌿</span>
+      <h4>LEZ Bruxelles</h4>
+      <p>Zone basse émission et autocars conformes.</p>
+    </a>
+    <a href="services/bus-mariage.html">
+      <span class="ic">💍</span>
+      <h4>Bus mariage</h4>
+      <p>Bus mariage Bruxelles avec chauffeur.</p>
+    </a>
+  </div>
+</div></section>
+
+<section class="cta"><div class="cta-in">
+  <div class="cta-text">
+    <span class="eyebrow" style="color:var(--gold)">Démarrer</span>
+    <h2>Besoin d'un <em>devis gratuit</em> ?</h2>
+    <p>Comparez les prestataires et demandez un devis sans engagement. Réponse rapide, flotte LEZ conforme, 17 autocaristes référencés.</p>
+    <a href="annuaire/" class="btn btn-gold">Voir l'annuaire →</a>
+  </div>
+  <div class="cta-side">
+    <span class="num">17</span>
+    <span class="lbl">autocaristes référencés</span>
+    <small>à Bruxelles &amp; en Belgique</small>
+  </div>
+</div></section>
+
+<footer class="foot"><div class="wrap">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="footer-logo">Autocariste<span>.be</span></div>
+      <p>Annuaire indépendant des loueurs d'autocar avec chauffeur à Bruxelles et en Belgique.</p>
+    </div>
+    <div>
+      <h4>Annuaire</h4>
+      <ul>
+        <li><a href="annuaire/">Tous les autocaristes</a></li>
+        <li><a href="annuaire/">Location autocar Bruxelles</a></li>
+        <li><a href="/ajouter-mon-entreprise/">Référencer mon entreprise</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="services/location-autocar-chauffeur.html">Location autocar avec chauffeur</a></li>
+        <li><a href="services/minibus-chauffeur.html">Minibus avec chauffeur</a></li>
+        <li><a href="services/transfert-aeroport.html">Transfert aéroport Zaventem</a></li>
+        <li><a href="services/bus-mariage.html">Bus mariage Bruxelles</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Ressources</h4>
+      <ul>
+        <li><a href="blog/">Blog &amp; guides</a></li>
+        <li><a href="tarifs/">Prix location autocar</a></li>
+        <li><a href="lez/">LEZ Bruxelles autocars</a></li>
+        <li><a href="sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <p>© 2025 Autocariste.be — Annuaire location autocar avec chauffeur Bruxelles &amp; Belgique</p>
+    <nav><a href="/mentions-legales/">Mentions légales</a><a href="/politique-confidentialite/">Confidentialité</a><a href="sitemap.xml">Sitemap</a></nav>
+  </div>
+</div></footer>
+
+</body></html>
