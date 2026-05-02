@@ -320,8 +320,8 @@ a{color:inherit;text-decoration:none}
 .fleet-desc p{font-size:1.05rem;color:rgba(255,255,255,.75);line-height:1.75}
 .car-wrap{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:16/7;background:#0a1622}
 .car-track{display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1);height:100%}
-.car-slide{min-width:100%;height:100%;flex-shrink:0}
-.car-slide img{width:100%;height:100%;object-fit:contain;object-position:center;background:#0a1622;padding:24px}
+.car-slide{flex:0 0 33.3333%;height:100%;padding:0 8px}
+.car-slide img{width:100%;height:100%;object-fit:contain;object-position:center;background:#0a1622;padding:12px;border-radius:12px}
 .car-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.18);color:#fff;width:48px;height:48px;border-radius:50%;font-size:1.6rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .18s;z-index:2}
 .car-btn:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
 .car-prev{left:16px}.car-next{right:16px}
@@ -391,10 +391,10 @@ a{color:inherit;text-decoration:none}
 
 <script>
 (function(){
-  var idx=0,total=7,auto;
+  var idx=0,total=7,perPage=3,maxIdx=total-perPage,auto;
   var track=document.getElementById('carTrack');
   var dotsEl=document.getElementById('carDots');
-  for(var i=0;i<total;i++){
+  for(var i=0;i<=maxIdx;i++){
     var d=document.createElement('button');
     d.className='car-dot'+(i===0?' on':'');
     d.setAttribute('aria-label','Slide '+(i+1));
@@ -403,8 +403,9 @@ a{color:inherit;text-decoration:none}
     dotsEl.appendChild(d);
   }
   function carGo(n){
-    idx=(n+total)%total;
-    track.style.transform='translateX(-'+idx*100+'%)';
+    idx=((n%(maxIdx+1))+(maxIdx+1))%(maxIdx+1);
+    var slideW=track.parentElement.offsetWidth/perPage;
+    track.style.transform='translateX(-'+(idx*slideW)+'px)';
     document.querySelectorAll('.car-dot').forEach(function(d,i){d.classList.toggle('on',i===idx)});
   }
   window.carMove=function(dir){carGo(idx+dir)};
