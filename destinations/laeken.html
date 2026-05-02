@@ -116,6 +116,28 @@ details[open] .faq-q{color:var(--gold);border-bottom:1px solid var(--g100)}
 .footer-legal{display:flex;gap:16px}.footer-legal a{font-size:.79rem;color:rgba(255,255,255,.36);transition:color .18s}.footer-legal a:hover{color:var(--gold)}
 @media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.section{padding:48px 18px}.hero{padding:44px 18px 52px}.footer-top{grid-template-columns:1fr}nav ul{display:none}}
+
+/* ── SUBPAGE HAMBURGER ─────────────────────── */
+.mob-menu-btn{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:100}
+.mob-menu-btn span{display:block;width:24px;height:2px;background:var(--white);border-radius:2px;transition:all .2s}
+.mob-nav{display:none;position:fixed;top:64px;left:0;right:0;background:var(--navy);border-bottom:2px solid var(--gold);padding:20px;flex-direction:column;gap:4px;z-index:199;box-shadow:0 8px 32px rgba(0,0,0,.25)}
+.mob-nav a{font-family:var(--fh);font-size:1rem;font-weight:600;color:var(--white);padding:12px 16px;border-radius:8px;display:block}
+.mob-nav a:hover{background:rgba(255,255,255,.1)}
+.mob-nav .nav-cta{background:var(--gold);color:var(--navy);margin-top:8px}
+.mob-nav.open{display:flex}
+@media(max-width:768px){
+  .mob-menu-btn{display:flex}
+  nav ul{display:none}
+  .nav-inner{position:relative}
+  .hero{padding:44px 18px 52px}
+  .section{padding:48px 18px}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .footer-top{grid-template-columns:1fr}
+  .grid-2{grid-template-columns:1fr}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Autocariste.be - Laeken","description":"Location d'autocar avec chauffeur à Laeken (Bruxelles). Prestataires vérifiés LEZ, devis gratuit.","url":"https://www.autocariste.be/destinations/laeken/","image":"https://ik.imagekit.io/9nqnnkvba/favicon-linfo-be/autocaristes%20favicons/bus_PNG8619.png?updatedAt=1777732938612","areaServed":{"@type":"Place","name":"Laeken","address":{"@type":"PostalAddress","postalCode":"1020","addressLocality":"Laeken","addressCountry":"BE"}},"serviceType":"Location d'autocar avec chauffeur","inLanguage":"fr"}</script></head><body>
 <div class="topbar"><div class="topbar-inner"><span>🇧🇪 Annuaire autocaristes Bruxelles &amp; Belgique</span><div style="display:flex;gap:18px"><a href="/ajouter-mon-entreprise/">Référencer mon entreprise</a></div></div></div>
