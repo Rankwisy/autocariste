@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+
+Sitemap: https://www.autocariste.be/sitemap.xml
+
+# AI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /

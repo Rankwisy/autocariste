@@ -1,0 +1,25 @@
+# Autocariste.be
+
+> Annuaire indépendant des loueurs d'autocar avec chauffeur à Bruxelles et en Belgique.
+
+Autocariste.be est un annuaire belge listant les prestataires de location d'autocar et minibus avec chauffeur à Bruxelles et dans les 19 communes de la Région de Bruxelles-Capitale.
+
+## Services référencés
+- Location d'autocar avec chauffeur
+- Location de minibus avec chauffeur
+- Transfert aéroport Zaventem en groupe
+- Bus mariage Bruxelles
+- Transport scolaire
+- Transport d'entreprise
+
+## Couverture géographique
+19 communes de Bruxelles-Capitale : Anderlecht, Auderghem, Berchem-Sainte-Agathe, Bruxelles-Ville, Etterbeek, Evere, Forest, Ganshoren, Ixelles, Jette, Koekelberg, Laeken, Molenbeek-Saint-Jean, Saint-Josse-ten-Noode, Schaerbeek, Uccle, Watermael-Boitsfort, Woluwe-Saint-Lambert, Woluwe-Saint-Pierre.
+
+## Pages principales
+- Annuaire complet: https://www.autocariste.be/annuaire/
+- Location autocar chauffeur: https://www.autocariste.be/services/location-autocar-chauffeur.html
+- Transfert aéroport: https://www.autocariste.be/services/transfert-aeroport.html
+- Bus mariage: https://www.autocariste.be/services/bus-mariage.html
+- Tarifs: https://www.autocariste.be/tarifs/
+- LEZ Bruxelles: https://www.autocariste.be/lez/
+- Sitemap: https://www.autocariste.be/sitemap.xml
