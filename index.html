@@ -312,6 +312,108 @@ a{color:inherit;text-decoration:none}
   <div class="s"><b>Free</b><p>Devis sans engagement</p></div>
 </div></div></section>
 
+<style>
+.fleet-sec{padding:80px 0;background:var(--navy);color:var(--white)}
+.fleet-top{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:40px}
+.fleet-hd .eyebrow{color:var(--gold)}
+.fleet-title{font-family:var(--fh);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:var(--white);letter-spacing:-0.025em;line-height:1.1;margin-top:10px}
+.fleet-desc p{font-size:1.05rem;color:rgba(255,255,255,.75);line-height:1.75}
+.car-wrap{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:16/7;background:#0a1622}
+.car-track{display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1);height:100%}
+.car-slide{min-width:100%;height:100%;flex-shrink:0}
+.car-slide img{width:100%;height:100%;object-fit:contain;object-position:center;background:#0a1622;padding:24px}
+.car-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.18);color:#fff;width:48px;height:48px;border-radius:50%;font-size:1.6rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .18s;z-index:2}
+.car-btn:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+.car-prev{left:16px}.car-next{right:16px}
+.car-dots{display:flex;justify-content:center;gap:8px;margin-top:18px}
+.car-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);border:none;cursor:pointer;padding:0;transition:all .2s}
+.car-dot.on{background:var(--gold);width:24px;border-radius:4px}
+.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.cap-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:28px}
+.cap-card .cap-ic{font-size:30px;margin-bottom:12px}
+.cap-card h4{font-family:var(--fh);font-size:1.05rem;font-weight:700;color:var(--white);margin-bottom:8px}
+.cap-card .cap-seats{font-family:var(--fh);font-size:1.7rem;font-weight:800;color:var(--gold);line-height:1}
+.cap-card .cap-seats small{font-size:.82rem;font-weight:500;color:rgba(255,255,255,.45);display:block;margin-top:4px}
+.cap-card p{font-size:.96rem;color:rgba(255,255,255,.6);line-height:1.65;margin-top:12px}
+@media(max-width:860px){.fleet-top{grid-template-columns:1fr}.cap-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.cap-grid{grid-template-columns:1fr}}
+</style>
+
+<section class="fleet-sec">
+  <div class="wrap">
+    <div class="fleet-top">
+      <div class="fleet-hd">
+        <span class="eyebrow">Notre flotte</span>
+        <h2 class="fleet-title">Autocars &amp; minibus —<br>quelle capacité choisir ?</h2>
+      </div>
+      <div class="fleet-desc">
+        <p>Que vous organisiez un transfert aéroport, une excursion scolaire ou un événement d'entreprise, le choix du véhicule dépend du nombre de passagers et du confort souhaité. Les <strong style="color:var(--gold-light)">minibus</strong> (8–19 places) sont idéaux pour les petits groupes et les transferts urbains. Les <strong style="color:var(--gold-light)">midibus</strong> (20–35 places) offrent un excellent compromis polyvalent. Pour les grands groupes, le <strong style="color:var(--gold-light)">grand autocar</strong> (36–70+ places) reste la solution la plus confortable et la plus économique par passager — parfait pour les voyages longue distance et les sorties touristiques.</p>
+      </div>
+    </div>
+
+    <div class="car-wrap">
+      <div class="car-track" id="carTrack">
+        <div class="car-slide"><img src="https://ik.imagekit.io/9nqnnkvba/favicon-linfo-be/autocaristes%20favicons/bus_PNG101199.png" alt="Autocar avec chauffeur Bruxelles" loading="lazy"></div>
+        <div class="car-slide"><img src="https://ik.imagekit.io/9nqnnkvba/favicon-linfo-be/autocaristes%20favicons/bus_PNG101205.png" alt="Location autocar Bruxelles" loading="lazy"></div>
+        <div class="car-slide"><img src="https://ik.imagekit.io/9nqnnkvba/favicon-linfo-be/autocaristes%20favicons/bus_PNG101204.png" alt="Bus avec chauffeur Belgique" loading="lazy"></div>
+        <div class="car-slide"><img src="https://ik.imagekit.io/9nqnnkvba/favicon-linfo-be/autocaristes%20favicons/bus_PNG101203.png" alt="Minibus avec chauffeur Bruxelles" loading="lazy"></div>
+        <div class="car-slide"><img src="https://ik.imagekit.io/9nqnnkvba/favicon-linfo-be/autocaristes%20favicons/bus_PNG8623.png" alt="Autocar tourisme Belgique" loading="lazy"></div>
+        <div class="car-slide"><img src="https://ik.imagekit.io/9nqnnkvba/favicon-linfo-be/autocaristes%20favicons/bus_PNG8618.png" alt="Bus groupe Bruxelles" loading="lazy"></div>
+        <div class="car-slide"><img src="https://ik.imagekit.io/9nqnnkvba/favicon-linfo-be/autocaristes%20favicons/bus_PNG101207.png" alt="Autocar LEZ conforme Bruxelles" loading="lazy"></div>
+      </div>
+      <button class="car-btn car-prev" onclick="carMove(-1)" aria-label="Précédent">&#8249;</button>
+      <button class="car-btn car-next" onclick="carMove(1)" aria-label="Suivant">&#8250;</button>
+    </div>
+    <div class="car-dots" id="carDots"></div>
+
+    <div class="cap-grid">
+      <div class="cap-card">
+        <div class="cap-ic">🚐</div>
+        <h4>Minibus</h4>
+        <div class="cap-seats">8 – 19 <small>places assises</small></div>
+        <p>Idéal pour les transferts aéroport, sorties en famille ou petits groupes. Agile et facile à garer en ville.</p>
+      </div>
+      <div class="cap-card">
+        <div class="cap-ic">🚌</div>
+        <h4>Midibus</h4>
+        <div class="cap-seats">20 – 35 <small>places assises</small></div>
+        <p>Polyvalent pour excursions scolaires, team buildings et événements d'entreprise de taille moyenne.</p>
+      </div>
+      <div class="cap-card">
+        <div class="cap-ic">🚍</div>
+        <h4>Grand autocar</h4>
+        <div class="cap-seats">36 – 70+ <small>places assises</small></div>
+        <p>La solution la plus économique par passager pour les grands groupes, voyages longue distance et circuits touristiques.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var idx=0,total=7,auto;
+  var track=document.getElementById('carTrack');
+  var dotsEl=document.getElementById('carDots');
+  for(var i=0;i<total;i++){
+    var d=document.createElement('button');
+    d.className='car-dot'+(i===0?' on':'');
+    d.setAttribute('aria-label','Slide '+(i+1));
+    d.setAttribute('data-i',i);
+    d.onclick=function(){carGo(+this.getAttribute('data-i'))};
+    dotsEl.appendChild(d);
+  }
+  function carGo(n){
+    idx=(n+total)%total;
+    track.style.transform='translateX(-'+idx*100+'%)';
+    document.querySelectorAll('.car-dot').forEach(function(d,i){d.classList.toggle('on',i===idx)});
+  }
+  window.carMove=function(dir){carGo(idx+dir)};
+  auto=setInterval(function(){carGo(idx+1)},4000);
+  track.parentElement.addEventListener('mouseenter',function(){clearInterval(auto)});
+  track.parentElement.addEventListener('mouseleave',function(){auto=setInterval(function(){carGo(idx+1)},4000)});
+})();
+</script>
+
 <section class="section"><div class="wrap">
   <div class="section-head">
     <div>
